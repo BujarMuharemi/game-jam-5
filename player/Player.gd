@@ -1,0 +1,67 @@
+extends CharacterBody2D 
+
+@export var speed = 600 
+@export var bullet_scene: PackedScene
+var screen_size
+
+func _ready():
+	screen_size = get_viewport_rect().size
+
+var A = Vector2(50,50)
+var B = Vector2(100, 100)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	
+	var velocity = Vector2.ZERO # The player's movement vector.
+	if Input.is_action_pressed("move_right"):
+		velocity.x += 1
+	if Input.is_action_pressed("move_left"):
+		velocity.x -= 1
+	if Input.is_action_pressed("move_down"):
+		velocity.y += 1
+	if Input.is_action_pressed("move_up"):
+		velocity.y -= 1
+
+	if velocity.length() > 0:
+		velocity = velocity.normalized() * speed
+		
+	position += velocity * delta
+	#position.x = clamp(position.x, 0, screen_size.x)
+	#position.y = clamp(position.y, 0, screen_size.y)
+	
+	# if(Input.is_action_just_pressed("left_click")):
+	
+
+#func _draw():	
+#	draw_line(A, B, Color(250,1,1), 3)
+	
+func _input(event):
+	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+		
+	if event is InputEventMouseButton and Input.is_action_just_pressed("left_click"):
+		#print('playerPos',position)
+		#print('mousePos',event.position)
+		
+		var diff = event.position - position
+		diff =  position.direction_to(event.position)
+		
+		
+		var bullet = bullet_scene.instantiate()
+		bullet.position = position + diff*50#(diff.normalized/2) #event.position 
+		var angle = bullet.position.angle_to(diff)
+		#var dir = bullet.rotate(angle)
+		#bullet.rotation=angle		
+				
+		var velocity = Vector2(diff.x , 0.0)
+		#bullet.linear_velocity = event.position
+		##bullet.add_constant_central_force(diff*500)
+		#bullet.position.move_toward(event.position,1)
+		
+		get_parent().add_child(bullet) # adding it to the main scene
+	elif event is InputEventMouseMotion:
+		var diff = event.position - position
+		diff =  position.direction_to(event.position)
+		$Gun.position = diff*50
+		#print("Mouse Click/Unclick at: ", event.position)
+
