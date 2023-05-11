@@ -1,0 +1,16 @@
+2a60927148abd1d33b818b535e306557
+::res://::1683841129
+icon.svg::CompressedTexture2D::2123052353128559725::1683744374::1683744421::1::::<><>::
+main.tscn::PackedScene::3521667142158320892::1683745193::0::1::::<><>::uid://cma4kjoshxhsd<>uid://b8v7kke37c442
+README.md::TextFile::-1::1683841115::0::1::::<><>::
+::res://art/::1683744374
+::res://bullet/::1683744421
+bullet.png::CompressedTexture2D::8063510057171857248::1683744374::1683744421::1::::<><>::
+bullet.tscn::PackedScene::8235722474812570658::1683744374::0::1::::<><>::uid://dm5a3kop68oy7
+::res://enemy/::1683744421
+enemy.gd::GDScript::-1::1683744374::0::1::::<>Area2D<>::
+enemy.tscn::PackedScene::4747965791018787705::1683744374::0::1::::<><>::res://enemy/enemy.gd<>uid://bdcrc8t0thyhq
+robot.png::CompressedTexture2D::2602153494363575206::1683744374::1683744421::1::::<><>::
+::res://player/::1683744374
+Player.gd::GDScript::-1::1683744374::0::1::::<>CharacterBody2D<>::
+Player.tscn::PackedScene::5616886636937384939::1683744374::0::1::::<><>::res://player/Player.gd<>uid://5iomks71v6i0<>uid://dplpe7wxrjrbe<>uid://dm5a3kop68oy7

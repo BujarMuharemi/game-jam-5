@@ -9,12 +9,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	position.move_toward(get_parent().get_node("Player").position,100)
 
-
-func _on_body_entered(body):
-	print(body)
-	body.hide()
+func _on_body_entered(body):	
+	body.get_parent().hide()	
 	hide()
 	bullet_hit.emit()
 	$CollisionShape2D.set_deferred("disabled", true)

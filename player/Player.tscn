@@ -2,16 +2,16 @@
 
 [ext_resource type="Script" path="res://player/Player.gd" id="1_4joht"]
 [ext_resource type="Texture2D" uid="uid://5iomks71v6i0" path="res://icon.svg" id="1_dug83"]
-[ext_resource type="PackedScene" uid="uid://dplpe7wxrjrbe" path="res://bullet/bullet.tscn" id="2_py5xq"]
+[ext_resource type="PackedScene" uid="uid://dl71kluf8ejn6" path="res://bullet/bullet2.tscn" id="2_addm8"]
 [ext_resource type="Texture2D" uid="uid://dm5a3kop68oy7" path="res://bullet/bullet.png" id="4_ept1d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bjlge"]
 size = Vector2(58, 64)
 
-[node name="Area2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_4joht")
 speed = 800
-bullet_scene = ExtResource("2_py5xq")
+bullet_scene = ExtResource("2_addm8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.456, 0.5)

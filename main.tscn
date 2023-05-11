@@ -5,8 +5,17 @@
 
 [node name="Main" type="Node"]
 
-[node name="Area2D" parent="." instance=ExtResource("1_ud884")]
-position = Vector2(131, 437)
+[node name="Player" parent="." instance=ExtResource("1_ud884")]
+position = Vector2(197, 403)
 
 [node name="Enemy4" parent="." instance=ExtResource("2_vv2i6")]
-position = Vector2(682, 466)
+position = Vector2(707, 443)
+
+[node name="Enemy5" parent="." instance=ExtResource("2_vv2i6")]
+position = Vector2(975, 492)
+
+[node name="Enemy6" parent="." instance=ExtResource("2_vv2i6")]
+position = Vector2(502, 229)
+
+[node name="Enemy7" parent="." instance=ExtResource("2_vv2i6")]
+position = Vector2(1072, 171)

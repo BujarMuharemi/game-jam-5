@@ -57,8 +57,10 @@ func _input(event):
 		#bullet.linear_velocity = event.position
 		##bullet.add_constant_central_force(diff*500)
 		#bullet.position.move_toward(event.position,1)
+		bullet.direction = global_position.direction_to(get_global_mouse_position())
 		
 		get_parent().add_child(bullet) # adding it to the main scene
+		
 	elif event is InputEventMouseMotion:
 		var diff = event.position - position
 		diff =  position.direction_to(event.position)
