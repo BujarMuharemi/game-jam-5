@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cma4kjoshxhsd"]
+[gd_scene load_steps=6 format=3 uid="uid://bwwu5qt16yfoa"]
 
 [ext_resource type="Script" path="res://player/Player.gd" id="1_4joht"]
-[ext_resource type="Texture2D" uid="uid://5iomks71v6i0" path="res://icon.svg" id="1_dug83"]
 [ext_resource type="PackedScene" uid="uid://dl71kluf8ejn6" path="res://bullet/bullet2.tscn" id="2_addm8"]
+[ext_resource type="Texture2D" uid="uid://5iomks71v6i0" path="res://player/icon.svg" id="3_jryq2"]
 [ext_resource type="Texture2D" uid="uid://dm5a3kop68oy7" path="res://bullet/bullet.png" id="4_ept1d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bjlge"]
@@ -15,7 +15,7 @@ bullet_scene = ExtResource("2_addm8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.456, 0.5)
-texture = ExtResource("1_dug83")
+texture = ExtResource("3_jryq2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -1)

@@ -1,14 +1,14 @@
 # game-jam-5
 https://itch.io/jam/go-godot-jam-4
 
-## Game Indentity
-Brotate like top down shooter
+## Game Identity
+Simple Brotate like top down shooter
 
-## Design Pillarsp
+## Design Pillars
 Fast. Action. Stats balancing
 
 ## Genre/Story/Mechanics
-Top down shooter where, mangaing your ammo and gold is vital, because they add to your weight. Also beserker mode is possible when the health is low.
+Top down shooter where, managing your ammo and gold is vital, because they add to your weight. Also berserker mode is possible when the health is low.
 
 ## Features
 - balance of gold/ammo to speed
@@ -16,14 +16,16 @@ Top down shooter where, mangaing your ammo and gold is vital, because they add t
 - gold needed for more health
 - more power needed for some enemies
 
-## TODOs
+## TODO - most basics
+- ~~make enemies move towards player~~
+- ~~make spawner for enemies~~
+- add timer for one level
+- make enemies drop loot (gold and bullets)
 - add UI to count enemies killed
-- make enemies move towards player
-	- make enemies drop loot (gold and bullets)
-- make spawner for enemies
 - improve gun
 	- add shooting speed
 	- add magazine mechanic & reload
 - make player move slower with more gold and ammo
 - make player stronger when low
 
+- make camera follow player smoothly ?

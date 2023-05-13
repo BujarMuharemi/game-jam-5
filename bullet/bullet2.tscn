@@ -13,7 +13,7 @@ script = ExtResource("1_m7pyk")
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_bjoms")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Bullet-Area2D" type="Area2D" parent="." groups=["bullet"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet-Area2D"]
 shape = SubResource("CircleShape2D_2825i")

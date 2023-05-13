@@ -27,13 +27,14 @@ func _process(delta):
 		velocity = velocity.normalized() * speed
 		
 	position += velocity * delta
+		
 	#position.x = clamp(position.x, 0, screen_size.x)
 	#position.y = clamp(position.y, 0, screen_size.y)
 	
 	# if(Input.is_action_just_pressed("left_click")):
 	
 
-#func _draw():	
+#func _draw():	aaa
 #	draw_line(A, B, Color(250,1,1), 3)
 	
 func _input(event):

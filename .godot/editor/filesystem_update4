@@ -1,9 +1,13 @@
 res://main.tscn
 res://README.md
-res://bullet/bullet2.tscn
-res://bullet/bullet2.gd
-res://player/Player.gd
 res://player/Player.tscn
 res://bullet/bullet.tscn
-res://enemy/enemy.gd
+res://bullet/bullet2.tscn
+res://player/Player.gd
 res://enemy/enemy.tscn
+res://enemy/enemy.gd
+res://enemy_spawner/enemy_spawner.tscn
+res://enemy_spawner/EnemySpawner.gd
+res://hud/hud.tscn
+res://hud/hud.gd
+res://main.gd
