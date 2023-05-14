@@ -1,6 +1,7 @@
 2a60927148abd1d33b818b535e306557
-::res://::1684012093
-main.tscn::PackedScene::3521667142158320892::1684012059::0::1::::<><>::uid://bwwu5qt16yfoa<>uid://b8v7kke37c442<>uid://bjo555h12rjt0
+::res://::1684057927
+main.gd::GDScript::-1::1684013247::0::1::::<>Node<>::
+main.tscn::PackedScene::3521667142158320892::1684015563::0::1::::<><>::uid://bwwu5qt16yfoa<>res://main.gd<>uid://b8v7kke37c442<>uid://bjo555h12rjt0<>uid://ccoojrxg86a8a
 README.md::TextFile::-1::1684012093::0::1::::<><>::
 ::res://bullet/::1684012059
 bullet2.gd::GDScript::-1::1683841687::0::1::::<>Node2D<>::
@@ -14,6 +15,9 @@ robot.png::CompressedTexture2D::2602153494363575206::1683744374::1683744421::1::
 ::res://enemy_spawner/::1684012093
 EnemySpawner.gd::GDScript::-1::1684012057::0::1::::<>Node<>::
 enemy_spawner.tscn::PackedScene::3048898236324586747::1684012093::0::1::::<><>::res://enemy_spawner/EnemySpawner.gd<>uid://b8v7kke37c442
+::res://hud/::1684012822
+hud.gd::GDScript::-1::1684012805::0::1::::<>CanvasLayer<>::
+hud.tscn::PackedScene::4942987382008363498::1684012822::0::1::::<><>::res://hud/hud.gd
 ::res://player/::1684012059
 icon.svg::CompressedTexture2D::2123052353128559725::1683744374::1684009537::1::::<><>::
 Player.gd::GDScript::-1::1684008826::0::1::::<>CharacterBody2D<>::

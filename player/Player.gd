@@ -2,10 +2,16 @@ extends CharacterBody2D
 
 @export var speed = 600 
 @export var bullet_scene: PackedScene
+@export var bullets = 240
+
 var screen_size
+var hud
+signal bullet_shot
 
 func _ready():
 	screen_size = get_viewport_rect().size
+	#get_parent().get_node("Player").connect("bullet_shot",update_bullets(bullets-1))
+	hud = get_parent().get_node("HUD")
 
 var A = Vector2(50,50)
 var B = Vector2(100, 100)
@@ -61,10 +67,18 @@ func _input(event):
 		bullet.direction = global_position.direction_to(get_global_mouse_position())
 		
 		get_parent().add_child(bullet) # adding it to the main scene
+		#emit_signal("bullet_shot")
+		bullets-=1
+		hud.update_bullets(bullets)
 		
 	elif event is InputEventMouseMotion:
+		#TODO: add this code to when the player is also moving
 		var diff = event.position - position
 		diff =  position.direction_to(event.position)
 		$Gun.position = diff*50
 		#print("Mouse Click/Unclick at: ", event.position)
 
+
+
+func _on_area_2d_area_entered(area):
+	print("touched player:",area)

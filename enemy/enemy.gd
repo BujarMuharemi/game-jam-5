@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var speed = 2
+@export var damage = 2
 
 signal bullet_hit
 

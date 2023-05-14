@@ -21,11 +21,11 @@ Top down shooter where, managing your ammo and gold is vital, because they add t
 - ~~make spawner for enemies~~
 - add timer for one level
 - make enemies drop loot (gold and bullets)
-- add UI to count enemies killed
 - improve gun
 	- add shooting speed
 	- add magazine mechanic & reload
 - make player move slower with more gold and ammo
 - make player stronger when low
 
+- add UI to count enemies killed
 - make camera follow player smoothly ?
