@@ -19,13 +19,19 @@ Top down shooter where, managing your ammo and gold is vital, because they add t
 ## TODO - most basics
 - ~~make enemies move towards player~~
 - ~~make spawner for enemies~~
-- add timer for one level
-- make enemies drop loot (gold and bullets)
+- ~~add timer for one level~~
+- ~~make game start and finish when won lost~~
+	- create start screen
+	- create tutorial sceen
+- make them load etc
+- create rounds !
+
 - improve gun
 	- add shooting speed
 	- add magazine mechanic & reload
+- make enemies drop loot (gold and bullets)
 - make player move slower with more gold and ammo
 - make player stronger when low
 
-- add UI to count enemies killed
+
 - make camera follow player smoothly ?

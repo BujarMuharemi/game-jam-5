@@ -1,10 +1,5 @@
 res://main.tscn
 res://enemy_spawner/EnemySpawner.gd
-res://player/Player.gd
-res://README.md
-res://main.gd
-res://hud/hud.gd
 res://hud/hud.tscn
-res://enemy_spawner/enemy_spawner.tscn
 res://player/Player.tscn
-res://enemy/enemy.gd
+res://enemy/enemy.tscn

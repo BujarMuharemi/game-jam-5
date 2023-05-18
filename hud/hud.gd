@@ -2,13 +2,15 @@ extends CanvasLayer
 
 signal start_game
 signal round_over
+signal try_again_round
 
-var round_time = 60
+#TODO move to main script
+@export var round_time = 60
 var bullets = 240
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#pass # Replace with function body.
-	$GameTimer.start()	
+	pass # Replace with function body.
+	#$GameTimer.start()	
 	#get_parent().get_node("Player").connect("bullet_shot",update_bullets(bullets-1))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,12 +20,20 @@ func _process(delta):
 	
 func update_bullets(bullets):
 	$Bullets.text = "Bullets: "+str(bullets)
-	
+
+func update_health(health):
+	$HealthGroup/Health.text = str(health)
 
 func _on_start_game_pressed():
 	$StartGame.hide()
 	start_game.emit()
-
+	$GameTimer.start()	
+	
+	$TimeLeft.set_visible(true)
+	$HealthGroup.set_visible(true)
+	$Bullets.set_visible(true)
+	
+	
 
 func _on_game_timer_timeout():
 	if(round_time>0):
@@ -31,3 +41,7 @@ func _on_game_timer_timeout():
 		$TimeLeft.text = "Time left: " + str(round_time)
 	else:
 		emit_signal("round_over")
+
+
+func _on_try_again_pressed():
+	emit_signal("try_again_round")

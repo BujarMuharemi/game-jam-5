@@ -8,6 +8,7 @@ size = Vector2(68, 73)
 
 [node name="Enemy" type="Area2D" groups=["enemy"]]
 script = ExtResource("1_e857k")
+damage = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)

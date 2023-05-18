@@ -3,10 +3,12 @@ extends CharacterBody2D
 @export var speed = 600 
 @export var bullet_scene: PackedScene
 @export var bullets = 240
+@export var health = 100
 
 var screen_size
 var hud
 signal bullet_shot
+signal player_died
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -78,7 +80,11 @@ func _input(event):
 		$Gun.position = diff*50
 		#print("Mouse Click/Unclick at: ", event.position)
 
-
-
 func _on_area_2d_area_entered(area):
-	print("touched player:",area)
+	if(area.is_in_group("enemy")):
+		health-=area.damage
+		if(health>=0):
+			hud.update_health(health)
+		else:
+			emit_signal("player_died")
+		
