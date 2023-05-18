@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwwu5qt16yfoa"]
+[gd_scene load_steps=8 format=3 uid="uid://bwwu5qt16yfoa"]
 
 [ext_resource type="Script" path="res://player/Player.gd" id="1_4joht"]
 [ext_resource type="PackedScene" uid="uid://dl71kluf8ejn6" path="res://bullet/bullet2.tscn" id="2_addm8"]
 [ext_resource type="Texture2D" uid="uid://5iomks71v6i0" path="res://player/icon.svg" id="3_jryq2"]
 [ext_resource type="Texture2D" uid="uid://dm5a3kop68oy7" path="res://bullet/bullet.png" id="4_ept1d"]
+[ext_resource type="AudioStream" uid="uid://cmslpqb4a3k4n" path="res://player/single-gunshot-6-101876.mp3" id="5_6mtsn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bjlge"]
 size = Vector2(58, 64)
@@ -35,5 +36,10 @@ texture = ExtResource("4_ept1d")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-1, -0.5)
 shape = SubResource("RectangleShape2D_myw3c")
+
+[node name="GunShot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_6mtsn")
+volume_db = -20.8
+pitch_scale = 3.89
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

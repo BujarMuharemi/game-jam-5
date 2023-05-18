@@ -1,10 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8v7kke37c442"]
+[gd_scene load_steps=7 format=3 uid="uid://b8v7kke37c442"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_e857k"]
-[ext_resource type="Texture2D" uid="uid://bdcrc8t0thyhq" path="res://enemy/robot.png" id="1_gjnns"]
+[ext_resource type="Texture2D" uid="uid://4rjote1nfwnv" path="res://enemy/robot3.png" id="2_c2q80"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qvdsf"]
-size = Vector2(68, 73)
+size = Vector2(72, 81)
+
+[sub_resource type="Animation" id="Animation_f6d3u"]
+resource_name = "enemy_walk"
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0001, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.42586]
+}
+
+[sub_resource type="Animation" id="Animation_ccfid"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e8ckk"]
+_data = {
+"RESET": SubResource("Animation_ccfid"),
+"enemy_walk": SubResource("Animation_f6d3u")
+}
 
 [node name="Enemy" type="Area2D" groups=["enemy"]]
 script = ExtResource("1_e857k")
@@ -12,10 +50,15 @@ damage = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_gjnns")
+texture = ExtResource("2_c2q80")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 2)
+position = Vector2(-2, 2.5)
 shape = SubResource("RectangleShape2D_qvdsf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_e8ckk")
+}
 
 [connection signal="area_entered" from="." to="." method="_on_body_entered"]

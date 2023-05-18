@@ -51,7 +51,7 @@ func _input(event):
 	if event is InputEventMouseButton and Input.is_action_just_pressed("left_click"):
 		#print('playerPos',position)
 		#print('mousePos',event.position)
-		
+		$GunShot.play()
 		var diff = event.position - position
 		diff =  position.direction_to(event.position)
 		
