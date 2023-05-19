@@ -4,26 +4,32 @@ extends CharacterBody2D
 @export var bullet_scene: PackedScene
 @export var bullets = 240
 @export var health = 100
+@export var gunDistance = 60
 
 var screen_size
 var hud
 signal bullet_shot
 signal player_died
+var animation
+var walkAnimationFlag = false
 
 func _ready():
 	screen_size = get_viewport_rect().size
 	#get_parent().get_node("Player").connect("bullet_shot",update_bullets(bullets-1))
 	hud = get_parent().get_node("HUD")
+	animation = $AnimationPlayer
+	
 
 var A = Vector2(50,50)
 var B = Vector2(100, 100)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
 	var velocity = Vector2.ZERO # The player's movement vector.
 	if Input.is_action_pressed("move_right"):
-		velocity.x += 1
+		velocity.x += 1				
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= 1
 	if Input.is_action_pressed("move_down"):
@@ -33,6 +39,10 @@ func _process(delta):
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
+		$AnimationPlayer.play("enemy_walk")
+	else:
+		$AnimationPlayer.pause()
+		
 		
 	position += velocity * delta
 		
@@ -57,7 +67,7 @@ func _input(event):
 		
 		
 		var bullet = bullet_scene.instantiate()
-		bullet.position = position + diff*50#(diff.normalized/2) #event.position 
+		bullet.position = position + diff*gunDistance#(diff.normalized/2) #event.position 
 		var angle = bullet.position.angle_to(diff)
 		#var dir = bullet.rotate(angle)
 		#bullet.rotation=angle		
@@ -77,7 +87,7 @@ func _input(event):
 		#TODO: add this code to when the player is also moving
 		var diff = event.position - position
 		diff =  position.direction_to(event.position)
-		$Gun.position = diff*50
+		$Gun.position = diff*gunDistance
 		#print("Mouse Click/Unclick at: ", event.position)
 
 func _on_area_2d_area_entered(area):

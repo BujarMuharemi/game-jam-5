@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://main.gd" id="1_w421u"]
 [ext_resource type="PackedScene" uid="uid://bjo555h12rjt0" path="res://enemy_spawner/enemy_spawner.tscn" id="3_fo8oq"]
 [ext_resource type="PackedScene" uid="uid://ccoojrxg86a8a" path="res://hud/hud.tscn" id="4_51441"]
-[ext_resource type="Texture2D" uid="uid://cfsmw3m18phih" path="res://background5.png" id="5_jrche"]
+[ext_resource type="Texture2D" uid="uid://8f0xspb08bct" path="res://background6.png" id="5_6edtm"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_w421u")
@@ -15,14 +15,34 @@ position = Vector2(207, 403)
 speed = 600
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_fo8oq")]
-spawnRate = 2
+spawnTime = 20
 
 [node name="HUD" parent="." instance=ExtResource("4_51441")]
-round_time = 10
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="BackgroundSprite" type="Sprite2D" parent="."]
 visibility_layer = 16
 z_index = -2
-position = Vector2(801.5, 456)
-scale = Vector2(0.829688, 0.837037)
-texture = ExtResource("5_jrche")
+position = Vector2(1155.5, 664.5)
+scale = Vector2(0.460938, 0.450926)
+texture = ExtResource("5_6edtm")
+
+[node name="BackgroundSprite2" type="Sprite2D" parent="."]
+visibility_layer = 16
+z_index = -2
+position = Vector2(273, 666)
+scale = Vector2(0.460938, 0.450926)
+texture = ExtResource("5_6edtm")
+
+[node name="BackgroundSprite3" type="Sprite2D" parent="."]
+visibility_layer = 16
+z_index = -2
+position = Vector2(359, 200)
+scale = Vector2(0.460938, 0.450926)
+texture = ExtResource("5_6edtm")
+
+[node name="BackgroundSprite4" type="Sprite2D" parent="."]
+visibility_layer = 16
+z_index = -2
+position = Vector2(1232, 192)
+scale = Vector2(0.460938, 0.450926)
+texture = ExtResource("5_6edtm")

@@ -1,30 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8v7kke37c442"]
+[gd_scene load_steps=8 format=3 uid="uid://b8v7kke37c442"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_e857k"]
-[ext_resource type="Texture2D" uid="uid://4rjote1nfwnv" path="res://enemy/robot3.png" id="2_c2q80"]
+[ext_resource type="Texture2D" uid="uid://cc57dx4jmva" path="res://enemy/robot4.png" id="2_jet4q"]
+[ext_resource type="AudioStream" uid="uid://cs3r1v1shyl87" path="res://enemy/robot-step.mp3" id="3_u4l8s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qvdsf"]
 size = Vector2(72, 81)
 
-[sub_resource type="Animation" id="Animation_f6d3u"]
-resource_name = "enemy_walk"
-loop_mode = 1
-step = 1.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0001, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 0.42586]
-}
-
 [sub_resource type="Animation" id="Animation_ccfid"]
 length = 0.001
+step = 1.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -37,6 +22,47 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="Animation" id="Animation_f6d3u"]
+resource_name = "enemy_walk"
+loop_mode = 1
+step = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0001, 0.292884, 0.750277, 0.968223),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, 0.0, 0.0698132, -0.0244346, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.456074, 0.843108, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0.9, 0.9), Vector2(0.9, 0.95), Vector2(0.9, 0.85), Vector2(0.9, 0.9)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e8ckk"]
 _data = {
@@ -45,12 +71,14 @@ _data = {
 }
 
 [node name="Enemy" type="Area2D" groups=["enemy"]]
+scale = Vector2(0.9, 0.9)
 script = ExtResource("1_e857k")
+speed = 1
 damage = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_c2q80")
+texture = ExtResource("2_jet4q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 2.5)
@@ -60,5 +88,12 @@ shape = SubResource("RectangleShape2D_qvdsf")
 libraries = {
 "": SubResource("AnimationLibrary_e8ckk")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_u4l8s")
+volume_db = -16.35
+pitch_scale = 1.08
+autoplay = true
+max_distance = 1000.0
 
 [connection signal="area_entered" from="." to="." method="_on_body_entered"]

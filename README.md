@@ -21,9 +21,10 @@ Top down shooter where, managing your ammo and gold is vital, because they add t
 - ~~make spawner for enemies~~
 - ~~add timer for one level~~
 - ~~make game start and finish when won lost~~
-	- create start screen
-	- create tutorial sceen
+- create start screen
+- create tutorial sceen
 - make them load etc
+
 - create rounds !
 
 - improve gun
