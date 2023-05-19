@@ -15,7 +15,6 @@ position = Vector2(207, 403)
 speed = 600
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_fo8oq")]
-spawnTime = 20
 
 [node name="HUD" parent="." instance=ExtResource("4_51441")]
 

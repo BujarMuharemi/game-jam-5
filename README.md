@@ -21,8 +21,9 @@ Top down shooter where, managing your ammo and gold is vital, because they add t
 - ~~make spawner for enemies~~
 - ~~add timer for one level~~
 - ~~make game start and finish when won lost~~
-- create start screen
-- create tutorial sceen
+
+- create start screen w/ settings etc
+- create tutorial/info screen
 - make them load etc
 
 - create rounds !
@@ -30,9 +31,12 @@ Top down shooter where, managing your ammo and gold is vital, because they add t
 - improve gun
 	- add shooting speed
 	- add magazine mechanic & reload
+	- create first art work
 - make enemies drop loot (gold and bullets)
+	- add health to enemies
 - make player move slower with more gold and ammo
 - make player stronger when low
 
 
 - make camera follow player smoothly ?
+- level layout needs to be changed to

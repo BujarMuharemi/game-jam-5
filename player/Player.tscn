@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dl71kluf8ejn6" path="res://bullet/bullet2.tscn" id="2_addm8"]
 [ext_resource type="Texture2D" uid="uid://cc57dx4jmva" path="res://enemy/robot4.png" id="3_bljtq"]
 [ext_resource type="Texture2D" uid="uid://dm5a3kop68oy7" path="res://bullet/bullet.png" id="4_ept1d"]
-[ext_resource type="AudioStream" uid="uid://cmslpqb4a3k4n" path="res://player/single-gunshot-6-101876.mp3" id="5_6mtsn"]
+[ext_resource type="AudioStream" uid="uid://c4oq5p6rpoilh" path="res://player/single-gunshot.mp3" id="5_jxhk1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bjlge"]
 size = Vector2(58, 64)
@@ -102,7 +102,7 @@ position = Vector2(-1, -0.5)
 shape = SubResource("RectangleShape2D_myw3c")
 
 [node name="GunShot" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_6mtsn")
+stream = ExtResource("5_jxhk1")
 volume_db = -12.394
 pitch_scale = 2.09
 max_distance = 1500.0

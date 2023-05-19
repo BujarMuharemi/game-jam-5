@@ -1,6 +1,8 @@
-CPUParticles2D
-Camera2D
 AudioStreamPlayer2D
+CPUParticles2D
+GPUParticles2D
+Node3D
+Camera2D
 AnimationTree
 AnimationPlayer
 Sprite2D

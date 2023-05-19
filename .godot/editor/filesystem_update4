@@ -3,4 +3,5 @@ res://enemy_spawner/EnemySpawner.gd
 res://hud/hud.tscn
 res://player/Player.tscn
 res://enemy/enemy.tscn
+res://particles/explosion.tscn
 res://enemy/enemy.gd
