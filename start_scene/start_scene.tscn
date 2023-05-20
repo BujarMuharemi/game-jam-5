@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://btaqwihtrskox"]
+
+[ext_resource type="Script" path="res://start_scene/start_scene.gd" id="1_qbrtk"]
+[ext_resource type="Texture2D" uid="uid://w2p4dtkeewgi" path="res://start_scene/background_start.png" id="2_6wb6t"]
+
+[node name="StartScene" type="CanvasLayer"]
+script = ExtResource("1_qbrtk")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_6wb6t")
+expand_mode = 3
+
+[node name="CenterContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 169
+text = "Heavy Mags"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.85
+theme_override_constants/separation = 50
+
+[node name="Button2" type="Button" parent="MarginContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 42
+text = "Start Game"
+
+[node name="Button" type="Button" parent="MarginContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "Options
+"
+
+[node name="Button3" type="Button" parent="MarginContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "Quit Game"
+
+[connection signal="pressed" from="MarginContainer/CenterContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
