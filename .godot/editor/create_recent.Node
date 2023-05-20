@@ -1,3 +1,4 @@
+Timer
 Container
 Panel
 TextureRect
@@ -24,6 +25,5 @@ AnimationPlayer
 Sprite2D
 CollisionShape2D
 Area2D
-Timer
 Node
 Node2D

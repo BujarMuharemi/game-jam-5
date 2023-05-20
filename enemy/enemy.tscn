@@ -116,7 +116,7 @@ _data = {
 [node name="Enemy" type="Area2D" groups=["enemy"]]
 scale = Vector2(0.9, 0.9)
 script = ExtResource("1_e857k")
-speed = 1
+speed = 3
 damage = 10
 explosion_scene = ExtResource("2_lfw1k")
 

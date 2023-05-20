@@ -7,7 +7,6 @@ process_mode = 3
 script = ExtResource("1_jwsui")
 
 [node name="TimeLeft" type="Label" parent="."]
-visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -41,6 +40,7 @@ text = "Message here"
 [node name="GameTimer" type="Timer" parent="."]
 
 [node name="StartGame" type="Button" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -56,7 +56,6 @@ theme_override_font_sizes/font_size = 48
 text = "Start Game"
 
 [node name="Bullets" type="Label" parent="."]
-visible = false
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -72,7 +71,6 @@ theme_override_font_sizes/font_size = 36
 text = "Bullets: 240"
 
 [node name="HealthGroup" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
@@ -143,6 +141,5 @@ theme_override_font_sizes/font_size = 48
 text = "Try again"
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
-[connection signal="pressed" from="StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="NextRound" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="TryAgain" to="." method="_on_try_again_pressed"]

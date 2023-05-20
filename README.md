@@ -17,6 +17,8 @@ Top down shooter where, managing your ammo and gold is vital, because they add t
 - more power needed for some enemies
 
 ## TODO - most basics
+> one good of everything !
+
 - ~~make enemies move towards player~~
 - ~~make spawner for enemies~~
 - ~~add timer for one level~~
@@ -26,22 +28,27 @@ Top down shooter where, managing your ammo and gold is vital, because they add t
 - ~~create start screen w/ settings etc~~
 - ~~create tutorial/info screen~~
 - ~~make them load etc~~
-	- fix main scene to directly start and remove the start btn and other hidden UI stuff
-
-- create rounds !
+- ~~fix main scene to directly start and remove the start btn and other hidden UI stuff~~
 
 - improve gun
-	- add shooting speed
-	- add magazine mechanic & reload
-	- create first art work
-
----
+	- ~~add shooting speed~~
+	- ~~make holding mouse btn down shoot. So no hard clicking~~
+	- add magazine mechanic & reloading
 
 - make enemies drop loot (gold and bullets/mags)
-	- add health to enemies
-- make player move slower with more gold and ammo
+- make player move slower with more (gold and ammo)
+
+- GET A LITTLE BIT OF FUN INTO THE GAME
+
+- create rounds: loading, dying, next one; different spawner rates for different level ?
+	- round generator should use time left and curent round number as variable to calculate rates
+	- improve spawner ?
+	
+---
+
+- add health to enemies
 - make player stronger when low
 
 
 - make camera follow player smoothly ?
-- level layout needs to be changed to
+	- level layout needs to be changed to

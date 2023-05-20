@@ -1,8 +1,8 @@
 extends CharacterBody2D 
 
-@export var speed = 600 
+@export var speed = 350
 @export var bullet_scene: PackedScene
-@export var bullets = 240
+@export var bullets = 30
 @export var health = 100
 @export var gunDistance = 60
 
@@ -12,6 +12,9 @@ signal bullet_shot
 signal player_died
 var animation
 var walkAnimationFlag = false
+var canShootFlag = true
+
+# https://stackoverflow.com/questions/48714224/how-to-see-if-mouse-is-down-or-screen-is-touched-in-event/48722860#48722860
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -45,56 +48,47 @@ func _process(delta):
 		
 		
 	position += velocity * delta
+	#print($GunCoolDown.time_left,canShootFlag)
+	if($GunCoolDown.is_stopped()):
+		canShootFlag = true		
 		
-	#position.x = clamp(position.x, 0, screen_size.x)
-	#position.y = clamp(position.y, 0, screen_size.y)
-	
-	# if(Input.is_action_just_pressed("left_click")):
-	
+
+	if Input.is_mouse_button_pressed(1) && canShootFlag:  
+		var mousePos = get_viewport().get_mouse_position()
+		var diff = mousePos - position
+		diff =  position.direction_to(mousePos)
+		
+		var bullet = bullet_scene.instantiate()
+		bullet.position = position + diff*gunDistance#(diff.normalized/2) #event.position 
+		var angle = bullet.position.angle_to(diff)
+		
+		bullet.direction = global_position.direction_to(get_global_mouse_position())
+		
+		get_parent().add_child(bullet)
+		#emit_signal("bullet_shot")
+		bullets-=1
+		hud.update_bullets(bullets)
+		
+		canShootFlag = false
+		$GunCoolDown.start()
 
 #func _draw():	aaa
 #	draw_line(A, B, Color(250,1,1), 3)
 	
 func _input(event):
-	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 		
-	if event is InputEventMouseButton and Input.is_action_just_pressed("left_click"):
-		#print('playerPos',position)
-		#print('mousePos',event.position)
-		$GunShot.play()
-		var diff = event.position - position
-		diff =  position.direction_to(event.position)
-		
-		
-		var bullet = bullet_scene.instantiate()
-		bullet.position = position + diff*gunDistance#(diff.normalized/2) #event.position 
-		var angle = bullet.position.angle_to(diff)
-		#var dir = bullet.rotate(angle)
-		#bullet.rotation=angle		
-				
-		var velocity = Vector2(diff.x , 0.0)
-		#bullet.linear_velocity = event.position
-		##bullet.add_constant_central_force(diff*500)
-		#bullet.position.move_toward(event.position,1)
-		bullet.direction = global_position.direction_to(get_global_mouse_position())
-		
-		get_parent().add_child(bullet) # adding it to the main scene
-		#emit_signal("bullet_shot")
-		bullets-=1
-		hud.update_bullets(bullets)
-		
-	elif event is InputEventMouseMotion:
+	if event is InputEventMouseMotion:
 		#TODO: add this code to when the player is also moving
 		var diff = event.position - position
 		diff =  position.direction_to(event.position)
 		$Gun.position = diff*gunDistance
-		#print("Mouse Click/Unclick at: ", event.position)
 
 func _on_area_2d_area_entered(area):
 	if(area.is_in_group("enemy")):
 		health-=area.damage
-		if(health>=0):
+		if(health>0):
 			hud.update_health(health)
 		else:
+			hud.update_health(health)
 			emit_signal("player_died")
 		

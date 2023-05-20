@@ -1,9 +1,9 @@
-res://start_scene/start_screen.tscn
+res://player/Player.tscn
 res://enemy_spawner/EnemySpawner.gd
 res://main.gd
+res://player/Player.gd
 res://main.tscn
-res://start_scene/start_screen.gd
+res://hud/hud.tscn
 res://start_scene/start_scene.tscn
-res://tutorial_scene/tutorial_scene.tscn
-res://start_scene/start_scene.gd
-res://tutorial_scene/tutorial_scene.gd
+res://enemy/enemy.tscn
+res://README.md

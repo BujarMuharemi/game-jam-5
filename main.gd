@@ -5,13 +5,14 @@ var HUD_message
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_tree().paused = true
-	$HUD.connect("start_game",game_started)
+	#$HUD.connect("start_game",game_started)
 	$HUD.connect("round_over",round_over)
 	$HUD.connect("try_again_round",restart_round)
 	
 	HUD_message = $HUD/Message
 	
 	$Player.connect("player_died",game_over)
+	game_started()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

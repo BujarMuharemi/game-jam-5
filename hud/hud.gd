@@ -9,7 +9,7 @@ signal try_again_round
 var bullets = 240
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	_on_start_game_pressed() # Replace with function body.
 	#$GameTimer.start()	
 	#get_parent().get_node("Player").connect("bullet_shot",update_bullets(bullets-1))
 
