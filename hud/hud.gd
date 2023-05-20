@@ -19,10 +19,13 @@ func _process(delta):
 	pass
 	
 func update_bullets(bullets):
-	$Bullets.text = "Bullets: "+str(bullets)
+	$Stats/Bullets.text = "Bullets: " + str(bullets)
+
+func update_speed(bullets):
+	$Stats/Speed.text = "Speed: " + str(bullets)
 
 func update_health(health):
-	$HealthGroup/Health.text = str(health)
+	$Stats/Health.text = "Health: " + str(health)
 
 func _on_start_game_pressed():
 	$StartGame.hide()
@@ -30,8 +33,8 @@ func _on_start_game_pressed():
 	$GameTimer.start()	
 	
 	$TimeLeft.set_visible(true)
-	$HealthGroup.set_visible(true)
-	$Bullets.set_visible(true)
+	
+	$Stats/Bullets.set_visible(true)
 	
 	
 

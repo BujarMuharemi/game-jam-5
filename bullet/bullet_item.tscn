@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgih20mbx2c0f"]
+
+[ext_resource type="Texture2D" uid="uid://drjvbpkhwyabs" path="res://bullet/Bullet.png" id="1_o4yjp"]
+[ext_resource type="Script" path="res://bullet/bullet_item.gd" id="1_s7gqm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75bam"]
+size = Vector2(20, 29)
+
+[sub_resource type="Animation" id="Animation_bmxm1"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.20019, 0.373825, 0.490262, 0.653683, 0.755821, 0.906985),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -2), Vector2(0, -4), Vector2(0, -2), Vector2(0, 2), Vector2(0, 4), Vector2(0, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0.115416, 0.506783, 0.800804),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.128, 0.14), Vector2(0.138, 0.151), Vector2(0.128, 0.14)]
+}
+
+[sub_resource type="Animation" id="Animation_ie3qh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.128, 0.14)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f51e1"]
+_data = {
+"RESET": SubResource("Animation_ie3qh"),
+"idle": SubResource("Animation_bmxm1")
+}
+
+[node name="BulletItem" type="Area2D" groups=["bullet_item"]]
+script = ExtResource("1_s7gqm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.128, 0.14)
+texture = ExtResource("1_o4yjp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_75bam")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+speed_scale = 0.5
+libraries = {
+"": SubResource("AnimationLibrary_f51e1")
+}

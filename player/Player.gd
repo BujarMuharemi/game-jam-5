@@ -2,9 +2,11 @@ extends CharacterBody2D
 
 @export var speed = 350
 @export var bullet_scene: PackedScene
-@export var bullets = 30
+@export var bullets: int
 @export var health = 100
-@export var gunDistance = 60
+@export var gunDistance: int
+@export var gunCoolDownTime: float
+@export var bulletsSlowdownFactor: float
 
 var screen_size
 var hud
@@ -13,6 +15,7 @@ signal player_died
 var animation
 var walkAnimationFlag = false
 var canShootFlag = true
+var currentSpeed = speed
 
 # https://stackoverflow.com/questions/48714224/how-to-see-if-mouse-is-down-or-screen-is-touched-in-event/48722860#48722860
 
@@ -21,7 +24,8 @@ func _ready():
 	#get_parent().get_node("Player").connect("bullet_shot",update_bullets(bullets-1))
 	hud = get_parent().get_node("HUD")
 	animation = $AnimationPlayer
-	
+	$GunCoolDown.wait_time = gunCoolDownTime
+	currentSpeed = speed - bullets * bulletsSlowdownFactor
 
 var A = Vector2(50,50)
 var B = Vector2(100, 100)
@@ -29,6 +33,8 @@ var B = Vector2(100, 100)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	currentSpeed = speed - bullets*bulletsSlowdownFactor 
+	hud.update_speed(currentSpeed)
 	
 	var velocity = Vector2.ZERO # The player's movement vector.
 	if Input.is_action_pressed("move_right"):
@@ -41,7 +47,7 @@ func _process(delta):
 		velocity.y -= 1
 
 	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
+		velocity = velocity.normalized() * currentSpeed
 		$AnimationPlayer.play("enemy_walk")
 	else:
 		$AnimationPlayer.pause()
@@ -51,9 +57,10 @@ func _process(delta):
 	#print($GunCoolDown.time_left,canShootFlag)
 	if($GunCoolDown.is_stopped()):
 		canShootFlag = true		
-		
+	
 
-	if Input.is_mouse_button_pressed(1) && canShootFlag:  
+	if Input.is_mouse_button_pressed(1) && canShootFlag && bullets>0: 		
+		$GunShot.play()
 		var mousePos = get_viewport().get_mouse_position()
 		var diff = mousePos - position
 		diff =  position.direction_to(mousePos)
@@ -69,6 +76,10 @@ func _process(delta):
 		bullets-=1
 		hud.update_bullets(bullets)
 		
+		canShootFlag = false
+		$GunCoolDown.start()
+	elif Input.is_mouse_button_pressed(1) && canShootFlag && bullets==0:
+		$GunDryFire.play()
 		canShootFlag = false
 		$GunCoolDown.start()
 
@@ -91,4 +102,9 @@ func _on_area_2d_area_entered(area):
 		else:
 			hud.update_health(health)
 			emit_signal("player_died")
+	elif(area.is_in_group("bullet_item")):
+		$BulletPickup.play()
+		bullets+=2
+		hud.update_bullets(bullets)
+		area.queue_free()
 		

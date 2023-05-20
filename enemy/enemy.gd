@@ -4,6 +4,7 @@ extends Area2D
 @export var damage = 2
 @export var bulletHitSFX = 'res://enemy/bullet-hit2.mp3'
 @export var explosion_scene: PackedScene
+@export var bulletDrop: PackedScene
 @export var health = 100
 
 var gotHit = false
@@ -27,6 +28,9 @@ func _process(delta):
 	#print($HitAudioStream.is_playing())
 	
 	if(!$HitAudioStream.is_playing() && gotHit && !$AnimationPlayer.is_playing()):
+		var bullet = bulletDrop.instantiate()
+		bullet.position = self.position
+		get_node("/root/Main").add_child(bullet)
 		self.queue_free()
 		
 		
@@ -53,6 +57,7 @@ func _on_body_entered(body):
 		explosion.set_emitting(true)
 		get_node("/root/Main").add_child(explosion)	
 		
+			
 		
 		#bullet_hit.emit()
 		speed=0

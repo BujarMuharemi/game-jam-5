@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8v7kke37c442"]
+[gd_scene load_steps=12 format=3 uid="uid://b8v7kke37c442"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_e857k"]
 [ext_resource type="Texture2D" uid="uid://cc57dx4jmva" path="res://enemy/robot4.png" id="2_jet4q"]
 [ext_resource type="PackedScene" uid="uid://t7828w51rwl7" path="res://particles/explosion.tscn" id="2_lfw1k"]
+[ext_resource type="PackedScene" uid="uid://bgih20mbx2c0f" path="res://bullet/bullet_item.tscn" id="3_6a52i"]
 [ext_resource type="AudioStream" uid="uid://cs3r1v1shyl87" path="res://enemy/robot-step.mp3" id="3_u4l8s"]
 [ext_resource type="AudioStream" uid="uid://b6mr2eu21i5w1" path="res://enemy/bullet-hit3.mp3" id="5_xx42b"]
 
@@ -119,6 +120,7 @@ script = ExtResource("1_e857k")
 speed = 3
 damage = 10
 explosion_scene = ExtResource("2_lfw1k")
+bulletDrop = ExtResource("3_6a52i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
@@ -137,7 +139,6 @@ libraries = {
 stream = ExtResource("3_u4l8s")
 volume_db = -16.35
 pitch_scale = 1.08
-autoplay = true
 max_distance = 1000.0
 
 [node name="HitAudioStream" type="AudioStreamPlayer2D" parent="."]

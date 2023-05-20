@@ -1,0 +1,11 @@
+res://bullet/bullet2.tscn::2700706048bda8220470cdf53eecd7cc::1684605022::res://.godot/exported/133200997/export-ee1cf784f66c57551452079b972cca90-bullet2.scn
+res://bullet/bullet.tscn::e09809f00758dddfba877e0af087702e::1684608538::res://.godot/exported/133200997/export-b76706a2aa0e739961a1ea57e3b62984-bullet.scn
+res://bullet/bullet_item.tscn::484581c1118b8b9c085152b1c9ffec94::1684608538::res://.godot/exported/133200997/export-b867591c8e4df0c5ddcea006a898bef7-bullet_item.scn
+res://enemy/enemy.tscn::f1b6c25d3d40924deaf0c7f04f046104::1684608538::res://.godot/exported/133200997/export-7a7ef7eb2aa2d13d5f77526465e49dfc-enemy.scn
+res://enemy_spawner/enemy_spawner.tscn::4000ef4bfee8af9ffdbcbcbd0f8fb75b::1684061672::res://.godot/exported/133200997/export-27e5260d2af39976f9b571bdb01c3335-enemy_spawner.scn
+res://hud/hud.tscn::845c5c227d253b652ec13ed4f82d4bab::1684608549::res://.godot/exported/133200997/export-52930d4a902a7043e922338d65f6e679-hud.scn
+res://particles/explosion.tscn::947faeb79db0ed46f17906fb567beb31::1684529502::res://.godot/exported/133200997/export-ecd5c8648af360b35d0ad0f01d8964e2-explosion.scn
+res://player/Player.tscn::39cdb93f5bbe1d01683fe1c6f853a8ae::1684608538::res://.godot/exported/133200997/export-23464e90032b607cf55b5bbb7efcb113-Player.scn
+res://start_scene/start_scene.tscn::8b9fbc725f4b4f35aab5c55311081464::1684608538::res://.godot/exported/133200997/export-b402d82e7b68a7b9724cf848bc28200d-start_scene.scn
+res://tutorial_scene/tutorial_scene.tscn::00bcd3916899a2a797456693f85243ff::1684590516::res://.godot/exported/133200997/export-a31f928a5d04f4addeb256c754039e83-tutorial_scene.scn
+res://main.tscn::437d9e4df75ba93559591e2654ad62e6::1684608538::res://.godot/exported/133200997/export-3070c538c03ee49b7677ff960a3f5195-main.scn

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr06d2dyrcnt0"]
+
+[ext_resource type="Texture2D" uid="uid://d2espuqn833q6" path="res://enemy/spawn-point.png" id="1_y87og"]
+
+[node name="Sprite2D" type="Sprite2D"]
+scale = Vector2(0.19, 0.2)
+texture = ExtResource("1_y87og")

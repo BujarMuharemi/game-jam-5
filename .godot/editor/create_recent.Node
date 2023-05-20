@@ -1,3 +1,12 @@
+Sprite2D
+VBoxContainer
+AudioListener2D
+AudioStreamPlayer2D
+AnimationPlayer
+Area2D
+CollisionShape2D
+Node
+Camera2D
 Timer
 Container
 Panel
@@ -7,7 +16,6 @@ GridContainer
 Button
 ColorRect
 Label
-VBoxContainer
 AspectRatioContainer
 MarginContainer
 HBoxContainer
@@ -15,15 +23,8 @@ CenterContainer
 PanelContainer
 ItemList
 CanvasLayer
-AudioStreamPlayer2D
 CPUParticles2D
 GPUParticles2D
 Node3D
-Camera2D
 AnimationTree
-AnimationPlayer
-Sprite2D
-CollisionShape2D
-Area2D
-Node
 Node2D

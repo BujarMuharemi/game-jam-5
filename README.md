@@ -30,13 +30,16 @@ Top down shooter where, managing your ammo and gold is vital, because they add t
 - ~~make them load etc~~
 - ~~fix main scene to directly start and remove the start btn and other hidden UI stuff~~
 
-- improve gun
+- ~~improve gun~~
 	- ~~add shooting speed~~
 	- ~~make holding mouse btn down shoot. So no hard clicking~~
-	- add magazine mechanic & reloading
+	- add magazine mechanic & reloading ?
 
-- make enemies drop loot (gold and bullets/mags)
-- make player move slower with more (gold and ammo)
+- ~~make player move slower with more (gold and ammo)~~ 
+- ~~make enemies drop loot (gold and bullets/mags)~~
+- ~~display speed on HUD~~
+
+- add indicator where enemies spawn
 
 - GET A LITTLE BIT OF FUN INTO THE GAME
 
@@ -45,10 +48,9 @@ Top down shooter where, managing your ammo and gold is vital, because they add t
 	- improve spawner ?
 	
 ---
-
 - add health to enemies
 - make player stronger when low
 
-
+- add spikes around the map 
 - make camera follow player smoothly ?
-	- level layout needs to be changed to
+	- level layout needs to be changed 
