@@ -1,7 +1,50 @@
-[gd_scene load_steps=2 format=3 uid="uid://cr06d2dyrcnt0"]
+[gd_scene load_steps=5 format=3 uid="uid://cr06d2dyrcnt0"]
 
 [ext_resource type="Texture2D" uid="uid://d2espuqn833q6" path="res://enemy/spawn-point.png" id="1_y87og"]
 
+[sub_resource type="Animation" id="Animation_mfgld"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.5, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.217, 0.227), Vector2(0.232, 0.242), Vector2(0.186, 0.196), Vector2(0.2015, 0.2115)]
+}
+
+[sub_resource type="Animation" id="Animation_awk20"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.217, 0.227)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ibx0a"]
+_data = {
+"RESET": SubResource("Animation_awk20"),
+"idle": SubResource("Animation_mfgld")
+}
+
 [node name="Sprite2D" type="Sprite2D"]
-scale = Vector2(0.19, 0.2)
+scale = Vector2(0.217, 0.227)
 texture = ExtResource("1_y87og")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_ibx0a")
+}

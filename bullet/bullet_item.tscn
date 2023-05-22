@@ -4,7 +4,34 @@
 [ext_resource type="Script" path="res://bullet/bullet_item.gd" id="1_s7gqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_75bam"]
-size = Vector2(20, 29)
+size = Vector2(39, 29)
+
+[sub_resource type="Animation" id="Animation_ie3qh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.128, 0.14)]
+}
 
 [sub_resource type="Animation" id="Animation_bmxm1"]
 resource_name = "idle"
@@ -34,33 +61,6 @@ tracks/1/keys = {
 "values": [Vector2(0.128, 0.14), Vector2(0.138, 0.151), Vector2(0.128, 0.14)]
 }
 
-[sub_resource type="Animation" id="Animation_ie3qh"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.128, 0.14)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f51e1"]
 _data = {
 "RESET": SubResource("Animation_ie3qh"),
@@ -74,7 +74,18 @@ script = ExtResource("1_s7gqm")
 scale = Vector2(0.128, 0.14)
 texture = ExtResource("1_o4yjp")
 
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+scale = Vector2(0.914, 1)
+texture = ExtResource("1_o4yjp")
+offset = Vector2(100, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
+scale = Vector2(0.914, 1)
+texture = ExtResource("1_o4yjp")
+offset = Vector2(200, 0)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9.5, 0)
 shape = SubResource("RectangleShape2D_75bam")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

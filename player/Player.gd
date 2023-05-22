@@ -104,7 +104,7 @@ func _on_area_2d_area_entered(area):
 			emit_signal("player_died")
 	elif(area.is_in_group("bullet_item")):
 		$BulletPickup.play()
-		bullets+=2
+		bullets+=3
 		hud.update_bullets(bullets)
 		area.queue_free()
 		

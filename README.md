@@ -39,15 +39,16 @@ Top down shooter where, managing your ammo and gold is vital, because they add t
 - ~~make enemies drop loot (gold and bullets/mags)~~
 - ~~display speed on HUD~~
 
-- add indicator where enemies spawn
+- ~~add indicator where enemies spawn~~ 
 
 - GET A LITTLE BIT OF FUN INTO THE GAME
 
 - create rounds: loading, dying, next one; different spawner rates for different level ?
-	- round generator should use time left and curent round number as variable to calculate rates
+	- round generator should use time left and current round number as variable to calculate rates
 	- improve spawner ?
 	
 ---
+
 - add health to enemies
 - make player stronger when low
 

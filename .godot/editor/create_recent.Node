@@ -1,13 +1,14 @@
+AnimationPlayer
+Timer
+MarginContainer
 Sprite2D
 VBoxContainer
 AudioListener2D
 AudioStreamPlayer2D
-AnimationPlayer
 Area2D
 CollisionShape2D
 Node
 Camera2D
-Timer
 Container
 Panel
 TextureRect
@@ -17,7 +18,6 @@ Button
 ColorRect
 Label
 AspectRatioContainer
-MarginContainer
 HBoxContainer
 CenterContainer
 PanelContainer

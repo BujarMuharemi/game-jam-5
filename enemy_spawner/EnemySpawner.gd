@@ -25,13 +25,15 @@ func spawn_enemy():
 		var enemyS = enemy_spawnPoint.instantiate()
 		
 		#TODO: avoid spawning directly at player ! do it w/ vector code from player
-		enemy.position.x += rng.randf_range(0, 1280)
-		enemy.position.y += rng.randf_range(0, 720)
+		enemy.position.x += rng.randf_range(0, 1600)
+		enemy.position.y += rng.randf_range(0, 900)
 		enemyS.position = enemy.position
 		#print(enemy.position)
 		
 		get_parent().add_child(enemyS)
-		
-		
+		$SpawnMarkerTimer.start()
+		# https://gdscript.com/solutions/coroutines-and-yield/
+		await $SpawnMarkerTimer.timeout 
+		enemyS.queue_free()
 		get_parent().add_child(enemy)
 
