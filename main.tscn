@@ -12,14 +12,14 @@ script = ExtResource("1_w421u")
 [node name="Player" parent="." instance=ExtResource("1_ud884")]
 visible = false
 position = Vector2(207, 403)
-speed = 300
+speed = 350
 bullets = 4
 gunCoolDownTime = 0.7
-bulletsSlowdownFactor = 10.0
+bulletsSlowdownFactor = 20.0
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_fo8oq")]
-spawnRate = 7
-spawnTime = 5
+spawnRate = 5
+spawnTime = 4.5
 
 [node name="HUD" parent="." instance=ExtResource("4_51441")]
 

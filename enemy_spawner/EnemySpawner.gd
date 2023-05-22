@@ -4,10 +4,10 @@ extends Node
 @export var enemy_spawnPoint: PackedScene
 
 @export var spawnRate = 1
-@export var spawnTime = 1
+@export var spawnTime = 1.0
+
 
 var rng = RandomNumberGenerator.new()
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Timer.set_wait_time(spawnTime)
@@ -20,7 +20,7 @@ func _process(delta):
 
 func spawn_enemy():
 
-	for i in spawnRate:
+	for i in spawnRate:		
 		var enemy = enemy_scene.instantiate()
 		var enemyS = enemy_spawnPoint.instantiate()
 		

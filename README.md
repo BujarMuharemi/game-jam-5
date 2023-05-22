@@ -42,16 +42,27 @@ Top down shooter where, managing your ammo and gold is vital, because they add t
 - ~~add indicator where enemies spawn~~ 
 
 - GET A LITTLE BIT OF FUN INTO THE GAME
+	- round generator should use time left and current round number as variable to calculate rates
+	- make it fun with only this these elements 
+	
 
 - create rounds: loading, dying, next one; different spawner rates for different level ?
-	- round generator should use time left and current round number as variable to calculate rates
-	- improve spawner ?
+	- improve spawner - stuff from above
+	- enemies shouldn't spawn too close to the player
 	
+- add damage indicator to player
+- add low ammo message and SFX
+- make enemies avoid getting over another
+	- same goes for enemies getting over the player
 ---
 
-- add health to enemies
+- create character for the player (chabycyuperbars)
+- add healthbar to enemies
+- add health pickups for player
 - make player stronger when low
 
 - add spikes around the map 
 - make camera follow player smoothly ?
 	- level layout needs to be changed 
+
+- some mid/fast synthwave as background music

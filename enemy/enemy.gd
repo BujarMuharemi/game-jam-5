@@ -27,7 +27,8 @@ func _process(delta):
 	position = position.move_toward(get_parent().get_node("Player").position,speed)
 	#print($HitAudioStream.is_playing())
 	
-	if(!$HitAudioStream.is_playing() && gotHit && !$AnimationPlayer.is_playing()):
+	if(!$HitAudioStream.is_playing() && gotHit && !$AnimationPlayer.is_playing()):		
+		#if(rng.randf() > 0.2):
 		var bullet = bulletDrop.instantiate()
 		bullet.position = self.position
 		get_node("/root/Main").add_child(bullet)
