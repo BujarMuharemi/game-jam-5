@@ -7,6 +7,8 @@ extends CharacterBody2D
 @export var gunDistance: int
 @export var gunCoolDownTime: float
 @export var bulletsSlowdownFactor: float
+@export var player_hit_scene: PackedScene
+
 
 var screen_size
 var hud
@@ -99,6 +101,9 @@ func _on_area_2d_area_entered(area):
 		health-=area.damage
 		if(health>0):
 			hud.update_health(health)
+			var blood = player_hit_scene.instantiate()
+			blood.position = self.position
+			get_parent().add_child(blood)
 		else:
 			hud.update_health(health)
 			emit_signal("player_died")

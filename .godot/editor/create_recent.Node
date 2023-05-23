@@ -1,3 +1,5 @@
+CPUParticles2D
+TextureRect
 Panel
 AnimationPlayer
 Timer
@@ -11,7 +13,6 @@ CollisionShape2D
 Node
 Camera2D
 Container
-TextureRect
 Control
 GridContainer
 Button
@@ -23,7 +24,6 @@ CenterContainer
 PanelContainer
 ItemList
 CanvasLayer
-CPUParticles2D
 GPUParticles2D
 Node3D
 AnimationTree

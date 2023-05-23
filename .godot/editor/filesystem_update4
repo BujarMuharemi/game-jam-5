@@ -1,7 +1,6 @@
-res://main.tscn
+res://player/player_hit.tscn
 res://enemy_spawner/EnemySpawner.gd
 res://main.gd
+res://main.tscn
 res://hud/hud.tscn
-res://README.md
-res://enemy/enemy.gd
 res://start_scene/start_scene.tscn

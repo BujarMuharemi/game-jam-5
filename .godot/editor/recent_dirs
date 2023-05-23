@@ -1,3 +1,5 @@
+res://player
+res://
 res://enemy
 /home/bujar/Documents/Coding/GameDev/export
 /home/bujar/Documents/Coding/GameDev
@@ -5,6 +7,5 @@ res://bullet
 res://tutorial_scene
 res://start_scene
 res://particles
-res://
 res://hud
 res://enemy_spawner

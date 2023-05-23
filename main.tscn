@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqf6lw4ovmxdk"]
+[gd_scene load_steps=7 format=3 uid="uid://bqf6lw4ovmxdk"]
 
 [ext_resource type="PackedScene" uid="uid://bwwu5qt16yfoa" path="res://player/Player.tscn" id="1_ud884"]
 [ext_resource type="Script" path="res://main.gd" id="1_w421u"]
+[ext_resource type="PackedScene" uid="uid://d35jv32tukces" path="res://player/player_hit.tscn" id="3_23yeg"]
 [ext_resource type="PackedScene" uid="uid://bjo555h12rjt0" path="res://enemy_spawner/enemy_spawner.tscn" id="3_fo8oq"]
 [ext_resource type="PackedScene" uid="uid://ccoojrxg86a8a" path="res://hud/hud.tscn" id="4_51441"]
 [ext_resource type="Texture2D" uid="uid://8f0xspb08bct" path="res://background6.png" id="5_6edtm"]
@@ -16,6 +17,7 @@ speed = 350
 bullets = 4
 gunCoolDownTime = 0.7
 bulletsSlowdownFactor = 20.0
+player_hit_scene = ExtResource("3_23yeg")
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_fo8oq")]
 spawnRate = 5
