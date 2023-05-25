@@ -56,6 +56,12 @@ func _process(delta):
 		$AnimationPlayer.play("enemy_walk")
 	else:
 		$AnimationPlayer.pause()
+	
+	print($LowAmmo/Timer.get_time_left())
+	if(bullets <= 2 && !$LowAmmo.is_playing() && $LowAmmo/Timer.get_time_left()==0):
+		$LowAmmo.play()	
+		$LowAmmo/Timer.start()
+	
 		
 		
 	position += velocity * delta
@@ -110,7 +116,7 @@ func _on_area_2d_area_entered(area):
 			get_parent().add_child(blood)  
 			
 			var pushDir = self.position.direction_to(area.position)
-			self.position +=  pushDir * - 36
+			#self.position +=  pushDir * - 5
 			
 		else:  
 			hud.update_health(health)

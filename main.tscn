@@ -15,13 +15,13 @@ visible = false
 position = Vector2(207, 403)
 speed = 350
 bullets = 4
-health = 1000
 gunCoolDownTime = 0.7
 bulletsSlowdownFactor = 20.0
 player_hit_scene = ExtResource("3_23yeg")
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_fo8oq")]
-spawnTime = 40.0
+spawnRate = 5
+spawnTime = 5.0
 
 [node name="HUD" parent="." instance=ExtResource("4_51441")]
 

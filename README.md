@@ -42,7 +42,7 @@ development started for https://itch.io/jam/go-godot-jam-4
 
 ### 24.05 - Goals - 2h
 - ~~add damage indicator to player 15 min~~ 55min
-- add low ammo message and SFX 30 min
+- ~~add low ammo message and SFX 30 min~~
 - clean up folder structure and files 10 min
 - 	clean up code of unused stuff
 - round generator should use time left and current round number as variable to calculate rates 1h

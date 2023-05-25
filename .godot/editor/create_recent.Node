@@ -1,8 +1,8 @@
+Timer
 CPUParticles2D
 TextureRect
 Panel
 AnimationPlayer
-Timer
 MarginContainer
 Sprite2D
 VBoxContainer
