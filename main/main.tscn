@@ -10,18 +10,9 @@
 [node name="Main" type="Node"]
 script = ExtResource("1_wvpf8")
 
-[node name="Player" parent="." instance=ExtResource("2_vn65e")]
-visible = false
-position = Vector2(207, 403)
-speed = 350
-bullets = 4
-gunCoolDownTime = 0.7
-bulletsSlowdownFactor = 18.0
-player_hit_scene = ExtResource("3_anuk4")
-
 [node name="EnemySpawner" parent="." instance=ExtResource("4_6lv1c")]
 spawnRate = 5
-spawnTime = 5.0
+spawnTime = 4.5
 
 [node name="HUD" parent="." instance=ExtResource("5_5mn36")]
 
@@ -52,3 +43,12 @@ z_index = -2
 position = Vector2(1232, 192)
 scale = Vector2(0.460938, 0.450926)
 texture = ExtResource("6_m6mbg")
+
+[node name="Player" parent="." instance=ExtResource("2_vn65e")]
+visible = false
+position = Vector2(500, 500)
+speed = 360
+bullets = 5
+gunCoolDownTime = 0.7
+bulletsSlowdownFactor = 16.0
+player_hit_scene = ExtResource("3_anuk4")

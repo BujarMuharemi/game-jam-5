@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed = 2
+@export var speed = 2.0
 @export var damage = 2
 @export var bulletHitSFX = 'res://enemy/bullet-hit2.mp3'
 @export var explosion_scene: PackedScene
@@ -28,10 +28,6 @@ func _process(delta):
 	#print($HitAudioStream.is_playing())
 	
 	if(!$HitAudioStream.is_playing() && gotHit && !$AnimationPlayer.is_playing()):		
-		#if(rng.randf() > 0.2):
-		var bullet = bulletDrop.instantiate()
-		bullet.position = self.position
-		get_node("/root/Main").add_child(bullet)
 		self.queue_free()
 		
 		
@@ -65,6 +61,11 @@ func _on_body_entered(body):
 		#bullet_hit.emit()
 		speed=0
 		$AnimationPlayer.play("dying")
+		
+		if(rng.randf() > 0.2 ):
+			var bulletItem = bulletDrop.instantiate()
+			bulletItem.position = self.position
+			get_node("/root/Main").add_child(bulletItem)
 		#$AnimationPlayer.stop()
 		#$CollisionShape2D.set_deferred("disabled", true)
 		#print("removeing",body.get_parent().name)

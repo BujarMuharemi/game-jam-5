@@ -1,10 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://btaqwihtrskox"]
+[gd_scene load_steps=4 format=3 uid="uid://btaqwihtrskox"]
 
 [ext_resource type="Script" path="res://start_scene/start_scene.gd" id="1_qbrtk"]
+[ext_resource type="Texture2D" uid="uid://drjvbpkhwyabs" path="res://bullet/Bullet.png" id="2_5pu57"]
 [ext_resource type="Texture2D" uid="uid://w2p4dtkeewgi" path="res://start_scene/background_start.png" id="2_6wb6t"]
 
 [node name="StartScene" type="CanvasLayer"]
 script = ExtResource("1_qbrtk")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 1590.0
+offset_bottom = 890.0
+texture = ExtResource("2_5pu57")
+expand_mode = 1
+stretch_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -26,14 +36,23 @@ expand_mode = 3
 layout_mode = 2
 alignment = 1
 
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("2_5pu57")
+expand_mode = 1
+stretch_mode = 2
+
 [node name="Label" type="Label" parent="MarginContainer/CenterContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 169
-text = "Heavy Mags"
+text = "Heavy Lead"
 horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/CenterContainer"]
+layout_mode = 2
 
 [node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer"]
 layout_mode = 2

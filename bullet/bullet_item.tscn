@@ -68,6 +68,7 @@ _data = {
 }
 
 [node name="BulletItem" type="Area2D" groups=["bullet_item"]]
+z_index = -1
 script = ExtResource("1_s7gqm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

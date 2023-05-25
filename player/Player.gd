@@ -18,6 +18,7 @@ var animation
 var walkAnimationFlag = false
 var canShootFlag = true
 var currentSpeed = speed
+var windowBorderOffset = 40
 
 # https://stackoverflow.com/questions/48714224/how-to-see-if-mouse-is-down-or-screen-is-touched-in-event/48722860#48722860
 
@@ -62,8 +63,10 @@ func _process(delta):
 		$LowAmmo/Timer.start()
 	
 		
-		
-	position += velocity * delta
+	var newPos = position + velocity * delta
+	if(newPos.x-windowBorderOffset > 0 && newPos.x+windowBorderOffset < 1600):
+		if(newPos.y-windowBorderOffset > 0 && newPos.y+windowBorderOffset < 900):
+			position += velocity * delta
 	#print($GunCoolDown.time_left,canShootFlag)
 	if($GunCoolDown.is_stopped()):
 		canShootFlag = true		
