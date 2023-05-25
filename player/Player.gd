@@ -2,15 +2,15 @@ extends CharacterBody2D
 
 @export var speed = 350
 @export var bullet_scene: PackedScene
-@export var bullets: int
+@export var bullets = 30
 @export var health = 100
 @export var gunDistance: int
 @export var gunCoolDownTime: float
 @export var bulletsSlowdownFactor: float
-@export var player_hit_scene: PackedScene
+@export var player_hit_scene: PackedScene 
+  
 
-
-var screen_size
+var screen_size 
 var hud
 signal bullet_shot
 signal player_died
@@ -28,6 +28,7 @@ func _ready():
 	animation = $AnimationPlayer
 	$GunCoolDown.wait_time = gunCoolDownTime
 	currentSpeed = speed - bullets * bulletsSlowdownFactor
+	
 
 var A = Vector2(50,50)
 var B = Vector2(100, 100)
@@ -37,7 +38,7 @@ var B = Vector2(100, 100)
 func _process(delta):
 	currentSpeed = speed - bullets*bulletsSlowdownFactor 
 	hud.update_speed(currentSpeed)
-	
+		
 	var velocity = Vector2.ZERO # The player's movement vector.
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1				
@@ -47,8 +48,10 @@ func _process(delta):
 		velocity.y += 1
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
-
-	if velocity.length() > 0:
+	
+	
+	
+	if velocity.length():
 		velocity = velocity.normalized() * currentSpeed
 		$AnimationPlayer.play("enemy_walk")
 	else:
@@ -88,7 +91,7 @@ func _process(delta):
 #func _draw():	aaa
 #	draw_line(A, B, Color(250,1,1), 3)
 	
-func _input(event):
+func _input(event):  
 		
 	if event is InputEventMouseMotion:
 		#TODO: add this code to when the player is also moving
@@ -100,11 +103,16 @@ func _on_area_2d_area_entered(area):
 	if(area.is_in_group("enemy")):
 		health-=area.damage
 		if(health>0):
+			$GettingHit.play()
 			hud.update_health(health)
 			var blood = player_hit_scene.instantiate()
 			blood.position = self.position
-			get_parent().add_child(blood)
-		else:
+			get_parent().add_child(blood)  
+			
+			var pushDir = self.position.direction_to(area.position)
+			self.position +=  pushDir * - 36
+			
+		else:  
 			hud.update_health(health)
 			emit_signal("player_died")
 	elif(area.is_in_group("bullet_item")):
@@ -113,3 +121,9 @@ func _on_area_2d_area_entered(area):
 		hud.update_bullets(bullets)
 		area.queue_free()
 		
+
+
+func _on_animation_player_animation_finished(anim_name):
+	print(anim_name)
+	if(anim_name=="getting_hit"):
+		print('getting done hit')

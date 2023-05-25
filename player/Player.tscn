@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bwwu5qt16yfoa"]
+[gd_scene load_steps=15 format=3 uid="uid://bwwu5qt16yfoa"]
 
 [ext_resource type="Script" path="res://player/Player.gd" id="1_4joht"]
 [ext_resource type="PackedScene" uid="uid://dl71kluf8ejn6" path="res://bullet/bullet2.tscn" id="2_addm8"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://c4oq5p6rpoilh" path="res://player/single-gunshot.mp3" id="5_jxhk1"]
 [ext_resource type="AudioStream" uid="uid://cf3onqmd3yp21" path="res://bullet/item-equip-6904.mp3" id="6_3w1sf"]
 [ext_resource type="AudioStream" uid="uid://cow1ph3jf4qu8" path="res://player/gun-dry-firing-3-39820.mp3" id="7_5vxyy"]
+[ext_resource type="AudioStream" uid="uid://tnei43u187lv" path="res://player/getting-hit.mp3" id="8_xbamt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bjlge"]
 size = Vector2(58, 64)
@@ -41,6 +42,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0.9, 0.9)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.46, 0.505)]
+}
 
 [sub_resource type="Animation" id="Animation_f6d3u"]
 resource_name = "enemy_walk"
@@ -71,10 +96,38 @@ tracks/1/keys = {
 "values": [Vector2(0.9, 0.9), Vector2(0.9, 0.95), Vector2(0.9, 0.85), Vector2(0.9, 0.9)]
 }
 
+[sub_resource type="Animation" id="Animation_wdotp"]
+resource_name = "getting_hit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.343854, 0.650711, 0.866164, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.18675, -0.0628319, -0.18675, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.15234, 0.380851, 0.628948, 0.822638, 0.998918),
+"transitions": PackedFloat32Array(1, 1, 1, 2.21914, 1),
+"update": 0,
+"values": [Vector2(0.46, 0.505), Vector2(0.448, 0.492), Vector2(0.491, 0.536), Vector2(0.507, 0.553), Vector2(0.46, 0.505)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e8ckk"]
 _data = {
 "RESET": SubResource("Animation_ccfid"),
-"enemy_walk": SubResource("Animation_f6d3u")
+"enemy_walk": SubResource("Animation_f6d3u"),
+"getting_hit": SubResource("Animation_wdotp")
 }
 
 [node name="Player" type="CharacterBody2D"]
@@ -89,7 +142,7 @@ gunCoolDownTime = 0.5
 bulletsSlowdownFactor = 3.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.456, 0.5)
+scale = Vector2(0.46, 0.505)
 texture = ExtResource("3_bljtq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -116,6 +169,7 @@ max_distance = 1500.0
 attenuation = 2.73208
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "getting_hit"
 libraries = {
 "": SubResource("AnimationLibrary_e8ckk")
 }
@@ -136,4 +190,11 @@ volume_db = 12.404
 pitch_scale = 1.04
 max_polyphony = 10
 
+[node name="GettingHit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_xbamt")
+volume_db = 2.098
+pitch_scale = 1.04
+max_polyphony = 10
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

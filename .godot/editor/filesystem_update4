@@ -1,7 +1,10 @@
-res://player/player_hit.tscn
-res://enemy_spawner/EnemySpawner.gd
-res://main.gd
 res://main.tscn
+res://enemy_spawner/EnemySpawner.gd
+res://player/Player.gd
+res://player/player_hit.gd
+res://main.gd
 res://hud/hud.tscn
 res://start_scene/start_scene.tscn
-res://player/player_hit.gd
+res://player/player_hit.tscn
+res://player/Player.tscn
+res://enemy/enemy.tscn

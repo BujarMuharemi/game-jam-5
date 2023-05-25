@@ -9,7 +9,7 @@ func _ready():
 	$HUD.connect("round_over",round_over)
 	$HUD.connect("try_again_round",restart_round)
 	$HUD.update_bullets($Player.bullets)
-	HUD_message = $HUD/Message
+	HUD_message = $HUD/Message   
 	
 	$Player.connect("player_died",game_over)
 	game_started()
