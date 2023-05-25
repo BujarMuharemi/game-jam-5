@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqf6lw4ovmxdk"]
+
+[ext_resource type="Script" path="res://main/main.gd" id="1_wvpf8"]
+[ext_resource type="PackedScene" uid="uid://bwwu5qt16yfoa" path="res://player/Player.tscn" id="2_vn65e"]
+[ext_resource type="PackedScene" uid="uid://d35jv32tukces" path="res://player/player_hit.tscn" id="3_anuk4"]
+[ext_resource type="PackedScene" uid="uid://bjo555h12rjt0" path="res://enemy_spawner/enemy_spawner.tscn" id="4_6lv1c"]
+[ext_resource type="PackedScene" uid="uid://ccoojrxg86a8a" path="res://hud/hud.tscn" id="5_5mn36"]
+[ext_resource type="Texture2D" uid="uid://8f0xspb08bct" path="res://main/background6.png" id="6_m6mbg"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_wvpf8")
+
+[node name="Player" parent="." instance=ExtResource("2_vn65e")]
+visible = false
+position = Vector2(207, 403)
+speed = 350
+bullets = 4
+gunCoolDownTime = 0.7
+bulletsSlowdownFactor = 18.0
+player_hit_scene = ExtResource("3_anuk4")
+
+[node name="EnemySpawner" parent="." instance=ExtResource("4_6lv1c")]
+spawnRate = 5
+spawnTime = 5.0
+
+[node name="HUD" parent="." instance=ExtResource("5_5mn36")]
+
+[node name="BackgroundSprite" type="Sprite2D" parent="."]
+visibility_layer = 16
+z_index = -2
+position = Vector2(1155.5, 664.5)
+scale = Vector2(0.460938, 0.450926)
+texture = ExtResource("6_m6mbg")
+
+[node name="BackgroundSprite2" type="Sprite2D" parent="."]
+visibility_layer = 16
+z_index = -2
+position = Vector2(273, 666)
+scale = Vector2(0.460938, 0.450926)
+texture = ExtResource("6_m6mbg")
+
+[node name="BackgroundSprite3" type="Sprite2D" parent="."]
+visibility_layer = 16
+z_index = -2
+position = Vector2(359, 200)
+scale = Vector2(0.460938, 0.450926)
+texture = ExtResource("6_m6mbg")
+
+[node name="BackgroundSprite4" type="Sprite2D" parent="."]
+visibility_layer = 16
+z_index = -2
+position = Vector2(1232, 192)
+scale = Vector2(0.460938, 0.450926)
+texture = ExtResource("6_m6mbg")

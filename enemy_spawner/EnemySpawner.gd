@@ -4,7 +4,7 @@ extends Node
 @export var enemy_spawnPoint: PackedScene
 
 @export var spawnRate = 1
-@export var spawnTime = 1.0
+@export var spawnTime: float
 
 
 var rng = RandomNumberGenerator.new()
@@ -19,7 +19,8 @@ func _process(delta):
 	#spawnRate =  (get_parent().get_node("HUD").round_time*-1)
 
 func spawn_enemy():
-
+	spawnTime-=0.2
+	print(spawnTime)
 	for i in spawnRate:		
 		var enemy = enemy_scene.instantiate()
 		var enemyS = enemy_spawnPoint.instantiate()

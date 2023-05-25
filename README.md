@@ -42,10 +42,8 @@ development started for https://itch.io/jam/go-godot-jam-4
 
 ### 24.05 - Goals - 2h
 - ~~add damage indicator to player 15 min~~ 55min
-- ~~add low ammo message and SFX 30 min~~
-- clean up folder structure and files 10 min
-- 	clean up code of unused stuff
-- round generator should use time left and current round number as variable to calculate rates 1h
+- ~~add low ammo message and SFX 30 min~~ 30min
+- ~~clean up folder structure and files 10 min~~
 
 
 ### 25.05 - Goals - 
@@ -54,6 +52,7 @@ development started for https://itch.io/jam/go-godot-jam-4
 	- enemies shouldn't spawn too close to the player
 	- create 5 round and count playtime
 
+- round generator should use time left and current round number as variable to calculate rates 1h
 - make gun move also when player is moving, but mouse is not 30min
 
 - level layout needs to be changed	

@@ -57,7 +57,6 @@ func _process(delta):
 	else:
 		$AnimationPlayer.pause()
 	
-	print($LowAmmo/Timer.get_time_left())
 	if(bullets <= 2 && !$LowAmmo.is_playing() && $LowAmmo/Timer.get_time_left()==0):
 		$LowAmmo.play()	
 		$LowAmmo/Timer.start()

@@ -12,7 +12,7 @@ var sfx
 signal bullet_hit
 
 var rng = RandomNumberGenerator.new()
-
+var wasHit = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	speed += rng.randf_range(-0.2, 0.5)
@@ -42,16 +42,18 @@ func _process(delta):
 func _on_body_entered(body):	
 	#print('@@',body)
 	
-	if(body.is_in_group("bullet")):
+	if(body.is_in_group("bullet") && !wasHit ):
 		#$AudioStreamPlayer2D.stop()
 		#$AudioStreamPlayer2D.set_stream(sfx)
+		wasHit=true
+		$CollisionShape2D.set_disabled(true)
+		self.remove_from_group("enemy")
 		
 		$HitAudioStream.play()
 		gotHit=true
 		
 		body.get_parent().hide()
 		body.get_parent().queue_free()
-		
 		
 		var explosion = explosion_scene.instantiate()
 		explosion.position = self.position

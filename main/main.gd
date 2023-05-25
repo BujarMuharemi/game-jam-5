@@ -39,7 +39,7 @@ func game_over():
 	
 	
 func round_over():
-	HUD_message.set_text('Round Over')
+	HUD_message.set_text('Round Over - You won')
 	HUD_message.set_visible(true)
 	$HUD/StartGame.set_text("Next Round")
 	$HUD/StartGame.set_visible(true)
