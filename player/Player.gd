@@ -29,7 +29,7 @@ func _ready():
 	animation = $AnimationPlayer
 	$GunCoolDown.wait_time = gunCoolDownTime
 	currentSpeed = speed - bullets * bulletsSlowdownFactor
-	
+	hud.update_health(health)
 
 var A = Vector2(50,50)
 var B = Vector2(100, 100)
@@ -58,7 +58,7 @@ func _process(delta):
 	else:
 		$AnimationPlayer.pause()
 	
-	if(bullets <= 2 && !$LowAmmo.is_playing() && $LowAmmo/Timer.get_time_left()==0):
+	if(bullets <= 1 && !$LowAmmo.is_playing() && $LowAmmo/Timer.get_time_left()==0):
 		$LowAmmo.play()	
 		$LowAmmo/Timer.start()
 	

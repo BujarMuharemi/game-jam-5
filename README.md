@@ -46,29 +46,27 @@ development started for https://itch.io/jam/go-godot-jam-4
 - ~~clean up folder structure and files 10 min~~
 
 
-### 25.05 - Goals - 
-- create rounds: loading, dying, next one; different spawner rates for different level ? - 2h
-	- improve spawner - stuff from above
-	- enemies shouldn't spawn too close to the player
-	- create 5 round and count playtime
-
+### 26.05 - Goals
+- create rounds: loading, dying, next one
+- improve spawner - different spawner rates for different level ? - 2h
 - round generator should use time left and current round number as variable to calculate rates 1h
-- make gun move also when player is moving, but mouse is not 30min
+
+- create character for the player (chabycyuperbars) with animations etc
+- create gun for the player
 
 - level layout needs to be changed	
 	- add spikes around the map ?
 	- make camera follow player smoothly ?
-- create character for the player (chabycyuperbars) with animations etc
-- create gun for the player
 
-
-### 26.05 - Goals
-- create very basic tutorial for the game
+### Bugs & Stuff
+- enemies shouldn't spawn too close to the player
 - make enemies avoid getting over another
 	- same goes for enemies getting over the player
+- gun following mouse also when only player is moving but mouse not
 
 
 ## Backlog
+- ~~create very basic tutorial for the game~~
 - add health pickups for player
 - add health bar to enemies
 - add magazine mechanic & reloading ?
@@ -78,3 +76,4 @@ development started for https://itch.io/jam/go-godot-jam-4
 
 - some mid/fast synthwave as background music
 	- https://open.spotify.com/track/4OboJX3At8HVV5p5ZmOtkm?si=820610793841467a
+	https://open.spotify.com/track/5EJkq1WOBqnhQpHqXw0WRO?si=1a646dad508c4519

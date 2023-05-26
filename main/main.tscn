@@ -15,6 +15,7 @@ spawnRate = 5
 spawnTime = 4.5
 
 [node name="HUD" parent="." instance=ExtResource("5_5mn36")]
+round_time = 10
 
 [node name="BackgroundSprite" type="Sprite2D" parent="."]
 visibility_layer = 16

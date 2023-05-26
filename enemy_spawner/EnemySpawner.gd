@@ -5,21 +5,31 @@ extends Node
 
 @export var spawnRate = 1
 @export var spawnTime: float
-
+@export var spanwTimeMinimizer = 0.10
 
 var rng = RandomNumberGenerator.new()
-# Called when the node enters the scene tree for the first time.
+var hud
+
 func _ready():
 	$Timer.set_wait_time(spawnTime)
-
-
+	hud = get_parent().get_node("HUD")
+	hud.connect("round_over",process_new_round)
+	hud.connect("start_round",new_round)
+	
+	
+func process_new_round(round):
+	$Timer.stop()
+	spanwTimeMinimizer+=round/15
+	
+func new_round(round):
+	$Timer.start()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 	#spawnRate =  (get_parent().get_node("HUD").round_time*-1)
 
 func spawn_enemy():
-	spawnTime-=0.15
+	spawnTime-= spanwTimeMinimizer
 	#print(spawnTime)
 	for i in spawnRate:		
 		var enemy = enemy_scene.instantiate()

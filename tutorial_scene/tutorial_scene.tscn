@@ -49,6 +49,7 @@ text = "- WASD to move around
 - There is currently only one round "
 
 [node name="Label5" type="Label" parent="."]
+layout_mode = 0
 offset_left = 902.0
 offset_top = 741.0
 offset_right = 1586.0
