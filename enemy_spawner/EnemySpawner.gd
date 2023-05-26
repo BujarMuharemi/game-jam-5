@@ -19,7 +19,9 @@ func _ready():
 	
 func process_new_round(round):
 	$Timer.stop()
-	spanwTimeMinimizer+=round/15
+	spawnRate+=1
+	spanwTimeMinimizer+=round/35.0
+	print(">spawnRate: "+str(spawnRate))
 	
 func new_round(round):
 	$Timer.start()
@@ -29,7 +31,10 @@ func _process(delta):
 	#spawnRate =  (get_parent().get_node("HUD").round_time*-1)
 
 func spawn_enemy():
-	spawnTime-= spanwTimeMinimizer
+	print("#spawnTime: "+str(spawnTime))
+	
+	if(spawnTime>2.2):
+		spawnTime-= spanwTimeMinimizer
 	#print(spawnTime)
 	for i in spawnRate:		
 		var enemy = enemy_scene.instantiate()
