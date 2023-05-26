@@ -1,13 +1,13 @@
+Panel
+TextureRect
 HBoxContainer
 Control
-TextureRect
 Label
 MarginContainer
 PointLight2D
 Camera2D
 Timer
 CPUParticles2D
-Panel
 AnimationPlayer
 Sprite2D
 VBoxContainer

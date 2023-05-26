@@ -1,11 +1,10 @@
-res://main/main.tscn
+res://start_scene/start_scene.tscn
 res://enemy_spawner/EnemySpawner.gd
 res://main/main.gd
 res://player/Player.gd
 res://player/player_hit.gd
-res://enemy_spawner/enemy_spawner.tscn
-res://enemy/enemy.tscn
-res://enemy/enemy.gd
-res://bullet/bullet_item.tscn
 res://tutorial_scene/tutorial_scene.tscn
-res://start_scene/start_scene.tscn
+res://main/main.tscn
+res://enemy/enemy.tscn
+res://export_presets.cfg
+res://player/Player.tscn

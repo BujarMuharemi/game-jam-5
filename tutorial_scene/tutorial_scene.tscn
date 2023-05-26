@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0sl5exgh0mih"]
+[gd_scene load_steps=3 format=3 uid="uid://c0sl5exgh0mih"]
 
 [ext_resource type="Script" path="res://tutorial_scene/tutorial_scene.gd" id="1_okahk"]
+[ext_resource type="Texture2D" uid="uid://w2p4dtkeewgi" path="res://start_scene/background_start.png" id="2_isygj"]
 
 [node name="TutorialScene" type="Control"]
 layout_mode = 3
@@ -13,52 +14,67 @@ script = ExtResource("1_okahk")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
-offset_left = 657.0
-offset_right = 943.0
-offset_bottom = 61.0
+offset_left = 135.0
+offset_top = 14.0
+offset_right = 421.0
+offset_bottom = 75.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 42
 text = "HOW TO PLAY"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 2
-offset_left = 7.0
-offset_top = 99.0
-offset_right = 1205.0
-offset_bottom = 221.0
+offset_left = 36.0
+offset_top = 92.0
+offset_right = 1561.0
+offset_bottom = 698.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 42
 text = "- WASD to move around
-- Mouse to shoot (single click or held down continuous fire)"
+- Mouse to aim and shot (single click or held down continuous fire)
 
-[node name="Label4" type="Label" parent="."]
-offset_left = 77.0
-offset_top = 616.0
-offset_right = 915.0
-offset_bottom = 799.0
+- Shoot enemy robots and avoid getting hit by them
+- Red cross marks their spawing point
+- Pickup bullets for your gun but
+- Carrying more bullets makes you slower !
+- Try to survie for 60 seconds
+- There is currently only one round "
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 902.0
+offset_top = 741.0
+offset_right = 1586.0
+offset_bottom = 831.0
 size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 42
-text = "Carrying more bullets makes you slower !
+text = "Turn on sound but not too loud :)"
 
-Try to survie for 60 seconds"
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_right = 1598.0
+offset_bottom = 891.0
+texture = ExtResource("2_isygj")
+expand_mode = 2
+stretch_mode = 5
 
-[node name="Label3" type="Label" parent="."]
-layout_mode = 2
-offset_left = 31.0
-offset_top = 296.0
-offset_right = 869.0
-offset_bottom = 479.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 42
-text = "Carrying more bullets makes you slower !
-
-Try to survie for 60 seconds"
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0, 0, 0, 0.466667)
+self_modulate = Color(0, 0, 0, 0.854902)
+z_index = -1
+layout_mode = 0
+offset_right = 1587.0
+offset_bottom = 892.0
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -67,10 +83,14 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -184.0
-offset_top = -53.0
+offset_left = -331.0
+offset_top = -97.0
+offset_right = -97.0
+offset_bottom = -17.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
 text = "Start Game"
 
