@@ -48,10 +48,10 @@ development started for https://itch.io/jam/go-godot-jam-4
 
 ### 26.05 - Goals
 - ~~create rounds: loading, dying, next one~~ 1:30h
-- improve spawner - different spawner rates for different level ? - 2h
-	- make it affect all different stats of the game
-- round generator should use time left and current round number as variable to calculate rates 1h
-	- did some
+- ~~improve spawner - different spawner rates for different level ? - 2h~~
+	- ? make it affect all different stats of the game
+- ~~round generator should use time left and current round number as variable to calculate rates 1h~~
+
 
 - create character for the player (chabycyuperbars) with animations etc
 - create gun for the player

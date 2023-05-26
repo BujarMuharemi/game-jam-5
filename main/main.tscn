@@ -47,8 +47,8 @@ texture = ExtResource("6_m6mbg")
 [node name="Player" parent="." instance=ExtResource("2_vn65e")]
 visible = false
 position = Vector2(500, 500)
-speed = 380
+speed = 370
 bullets = 5
 gunCoolDownTime = 0.7
-bulletsSlowdownFactor = 15.0
+bulletsSlowdownFactor = 16.0
 player_hit_scene = ExtResource("3_anuk4")

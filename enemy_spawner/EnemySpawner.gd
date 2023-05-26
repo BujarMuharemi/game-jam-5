@@ -19,6 +19,7 @@ func _ready():
 	
 func process_new_round(round):
 	$Timer.stop()
+	spawnTime=5.5
 	spawnRate+=1
 	spanwTimeMinimizer+=round/35.0
 	print(">spawnRate: "+str(spawnRate))
@@ -33,7 +34,7 @@ func _process(delta):
 func spawn_enemy():
 	print("#spawnTime: "+str(spawnTime))
 	
-	if(spawnTime>2.2):
+	if(spawnTime>2.5):
 		spawnTime-= spanwTimeMinimizer
 	#print(spawnTime)
 	for i in spawnRate:		

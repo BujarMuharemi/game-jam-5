@@ -44,9 +44,11 @@ text = "- WASD to move around
 - Shoot enemy robots and avoid getting hit by them
 - Red cross marks their spawing point
 - Pickup bullets for your gun but
+- Get as much lead as possible down range !
 - Carrying more bullets makes you slower !
 - Try to survie for 60 seconds
-- There is currently only one round "
+- After each round it gets harder
+"
 
 [node name="Label5" type="Label" parent="."]
 layout_mode = 0
