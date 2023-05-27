@@ -52,7 +52,7 @@ development started for https://itch.io/jam/go-godot-jam-4
 	- ? make it affect all different stats of the game
 - ~~round generator should use time left and current round number as variable to calculate rates 1h~~
 
-
+test
 - create character for the player (chabycyuperbars) with animations etc
 - create gun for the player
 
