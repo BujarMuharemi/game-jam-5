@@ -52,7 +52,7 @@ development started for https://itch.io/jam/go-godot-jam-4
 	- ? make it affect all different stats of the game
 - ~~round generator should use time left and current round number as variable to calculate rates 1h~~
 
-test
+
 - create character for the player (chabycyuperbars) with animations etc
 - create gun for the player
 
@@ -69,12 +69,17 @@ test
 
 ## Backlog
 - ~~create very basic tutorial for the game~~
-- add health pickups for player
-- add health bar to enemies
-- add magazine mechanic & reloading ?
-- make player stronger when low
 - add an highscore
 - make it pauseable while playing ?
+- add health pickups for player
+- add health bar to enemies
+
+- add enemies which shooot projectile
+- add special attack for that 10 bullets are needed to use it (shoots in an cirele or similar). Should also have an cooldown (add some risk/reward incentive to getting more bullets)
+
+
+- add magazine mechanic & reloading ?
+- make player stronger when low
 
 - some mid/fast synthwave as background music
 	- https://open.spotify.com/track/4OboJX3At8HVV5p5ZmOtkm?si=820610793841467a
