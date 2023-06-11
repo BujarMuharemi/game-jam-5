@@ -6,5 +6,3 @@ res://player/player_hit.gd
 res://main/main.tscn
 res://enemy/enemy.tscn
 res://hud/hud.tscn
-res://README.md
-res://tutorial_scene/tutorial_scene.tscn
