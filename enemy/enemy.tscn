@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=3 uid="uid://b8v7kke37c442"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_e857k"]
-[ext_resource type="Texture2D" uid="uid://cc57dx4jmva" path="res://enemy/robot4.png" id="2_jet4q"]
 [ext_resource type="PackedScene" uid="uid://t7828w51rwl7" path="res://particles/explosion.tscn" id="2_lfw1k"]
 [ext_resource type="PackedScene" uid="uid://bgih20mbx2c0f" path="res://bullet/bullet_item.tscn" id="3_6a52i"]
 [ext_resource type="AudioStream" uid="uid://cs3r1v1shyl87" path="res://enemy/robot-step.mp3" id="3_u4l8s"]
+[ext_resource type="Texture2D" uid="uid://b3j6mp5miv13e" path="res://enemy/enemy-fuck.png" id="4_sry4h"]
 [ext_resource type="AudioStream" uid="uid://b6mr2eu21i5w1" path="res://enemy/bullet-hit3.mp3" id="5_xx42b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qvdsf"]
-size = Vector2(70.2222, 83.3333)
+size = Vector2(73.8889, 101.667)
 
 [sub_resource type="Animation" id="Animation_ccfid"]
 length = 0.001
@@ -86,12 +86,12 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.0001, 0.292884, 0.750277, 0.968223),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
+"update": 0,
 "values": [0.0, 0.0, 0.0698132, -0.0244346, 0.0]
 }
 tracks/1/type = "value"
@@ -103,7 +103,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.456074, 0.843108, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
+"update": 0,
 "values": [Vector2(0.9, 0.9), Vector2(0.9, 0.95), Vector2(0.9, 0.85), Vector2(0.9, 0.9)]
 }
 
@@ -123,11 +123,11 @@ explosion_scene = ExtResource("2_lfw1k")
 bulletDrop = ExtResource("3_6a52i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_jet4q")
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("4_sry4h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2.88889, 0.555555)
+position = Vector2(0.833332, -3.61111)
 shape = SubResource("RectangleShape2D_qvdsf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

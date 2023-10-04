@@ -152,8 +152,8 @@ shape = SubResource("RectangleShape2D_bjlge")
 disabled = true
 
 [node name="Gun" type="Sprite2D" parent="."]
-position = Vector2(93.3333, 1)
-scale = Vector2(0.03, 0.03)
+position = Vector2(93.3333, 20)
+scale = Vector2(0.035, 0.035)
 texture = ExtResource("4_jx4by")
 
 [node name="Area2D" type="Area2D" parent="."]
