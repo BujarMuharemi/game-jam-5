@@ -49,6 +49,7 @@ visible = false
 position = Vector2(500, 500)
 speed = 370
 bullets = 5
+health = 100
 gunCoolDownTime = 0.7
 bulletsSlowdownFactor = 16.0
 player_hit_scene = ExtResource("3_anuk4")

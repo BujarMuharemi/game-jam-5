@@ -106,6 +106,11 @@ func _input(event):
 		var diff = event.position - position
 		diff =  position.direction_to(event.position)
 		$Gun.position = diff*gunDistance
+		$Gun.look_at(get_global_mouse_position())
+		if($Gun.position.x<0):
+			$Gun.set_flip_v(true)
+		else:
+			$Gun.set_flip_v(false)
 
 func _on_area_2d_area_entered(area):
 	if(area.is_in_group("enemy")):
